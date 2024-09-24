@@ -2,14 +2,14 @@ package edu.grinnell.csc207.util;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.lang.Double;
+// import java.lang.Double;
 
 /**
  * A simple set of utilities for dealing with input and output.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
- * @author Your Name Here
+ * @author Sara Jaljaa
+ * @author Mitch Paiva
  */
 public class IOUtils {
   /**
@@ -25,31 +25,16 @@ public class IOUtils {
    * @return
    *   The integer read.
    */
-  public static int readInt(PrintWriter pw, BufferedReader br, String prompt)
-    {
+  public static int readInt(PrintWriter pw, BufferedReader br, String prompt) {
     if (prompt != null) {
       pw.print(prompt);
       pw.flush();
     } // if there is a prompt
-    try {
-    String response = br.readLine();
-    return Integer.parseInt(response);
-  } catch (Exception e) { 
-    return Integer.MIN_VALUE; // readInt
-  } 
-  }
-
-  public static double readDbl(PrintWriter pw, BufferedReader br, String prompt)
-  {
-  if (prompt != null) {
-    pw.print(prompt);
-    pw.flush();
-  } // if there is a prompt
-  try {
-  String response = br.readLine();
-  return Double.parseDouble(response);
-} catch (Exception e) { 
-  return Double.MIN_VALUE; // readInt
-} 
-}
+      try {
+      String response = br.readLine();
+      return Integer.parseInt(response);
+    } catch (Exception e) { 
+      return Integer.MIN_VALUE;
+    } // Exception
+  } // readInt(PrintWrite, BufferedReader, String)
 }// class IOUtils

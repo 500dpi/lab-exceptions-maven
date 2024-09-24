@@ -1,6 +1,7 @@
 package edu.grinnell.csc207.util;
 
 import java.lang.Math;
+import java.lang.String;
 
 /**
  * Quadratic expressions (of the form ax^2 + bx + c).
@@ -59,7 +60,7 @@ public class Quadratic {
    * @return the function as a string
    */
   public String toString() {
-    return String.format("%dx^2 + %dx + %d", a, b, c);
+    return String.format("%.0fx^2 + %.0fx + %.0f", a, b, c);
   } // toString()
 
   // +---------+-----------------------------------------------------
@@ -75,7 +76,7 @@ public class Quadratic {
    * @return the expression as a string
    */
   public String toString(double val) {
-    return String.format("%d*%d^2 + %d*%d + %d", a, val, b, val, c);
+    return String.format("%.0f*%.0f^2 + %.0f*%.0f + %.0f", a, val, b, val, c);
   } // toString(double)
 
   /**
@@ -99,8 +100,12 @@ public class Quadratic {
   public double smallerRoot() {
     double root;
     root = (- this.b - (Math.sqrt((this.b * this.b) - 
-          (4 * this.a * this.c)))) / (2 * this.a);
-    return root;
+            4 * this.a * this.c))) / (2 * this.a);
+    if (root != Double.NaN) {
+      return root;
+    } else {
+      return Double.MIN_VALUE;
+    } // if
   } // smallerRoot
 
   /**
