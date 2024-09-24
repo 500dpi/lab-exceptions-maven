@@ -1,5 +1,6 @@
 package edu.grinnell.csc207.main;
 
+import edu.grinnell.csc207.util.IOUtils;
 import edu.grinnell.csc207.util.Quadratic;
 
 import java.io.BufferedReader;
@@ -27,10 +28,19 @@ public class QR {
     PrintWriter pen = new PrintWriter(System.out, true);
     BufferedReader eyes = new BufferedReader(new InputStreamReader(System.in));
 
-    // ...
+    Quadratic quad;
+    int a, b, c;
+    
+    a = IOUtils.readInt(pen, eyes, "Please enter a (the coefficient of the squared term): ");
+    b = IOUtils.readInt(pen, eyes, "Please enter b (the coefficient of the linear term): ");
+    c = IOUtils.readInt(pen, eyes, "Please enter c (the constant): ");
 
-    eyes.close();
-    pen.close();
+    quad = new Quadratic((double) a, (double) b, (double) c);
+
+    pen.println("The smaller root of " + quad.toString() + " is " + quad.smallerRoot());
+
+    // eyes.close();
+    // pen.close();
   } // main(String[])
 
 } // QR

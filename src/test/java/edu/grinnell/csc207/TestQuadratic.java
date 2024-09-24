@@ -46,6 +46,4 @@ public class TestQuadratic {
     assertEquals(-1.5, (new Quadratic(6, 1, -12)).smallerRoot(), 0.001,
       "The smaller root fof 6x^2 + x - 12 is -1.5");
   } // testSmallroots()
-
-
 } // class TestQuadratic
