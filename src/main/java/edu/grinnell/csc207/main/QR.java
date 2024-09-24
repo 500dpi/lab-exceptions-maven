@@ -31,6 +31,7 @@ public class QR {
     int a, b, c;
     Quadratic quad;
     
+    pen.println("Hi! I'm here to help you understand quadratic functions." + '\n');
     a = IOUtils.readInt(pen, eyes, "Please enter a (the coefficient of the squared term): ");
     b = IOUtils.readInt(pen, eyes, "Please enter b (the coefficient of the linear term) : ");
     c = IOUtils.readInt(pen, eyes, "Please enter c (the constant)                       : ");
@@ -48,7 +49,7 @@ public class QR {
     quad = new Quadratic(a, b, c);
 
     if (a == 0) {
-      System.err.println('\n' + "Error: cannot calculate root.");;
+      System.err.println('\n' + "> Error: cannot calculate root.");;
     } else {
       pen.println('\n' + "The smaller root of " + quad.toString() + " is " + (int) quad.smallerRoot() + '\n');
       pen.println("Experimentally, " + quad.toString() + " = " + (int) quad.evaluate(quad.smallerRoot()) + "." + '\n');
